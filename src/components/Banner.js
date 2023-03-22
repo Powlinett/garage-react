@@ -15,7 +15,7 @@ class Banner extends React.Component {
       <div className="garage-info">
         <h3 className="text-center">Le Wagon</h3>
         <div className="garage-description">
-          Hello {this.props.username}, our garage is the best.
+          Hello {this.props.username} {this.props.lastName}, our garage is the best.
           Reasonable price, always on time, we are the awesome (and fictional).
         </div>
       </div>

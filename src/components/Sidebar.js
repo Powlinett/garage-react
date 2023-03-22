@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div className='sidebar'>
-        <Banner/>
+        <Banner username="Pauline" lastName="Eustachy"/>
         <CarForm/>
       </div>
     )

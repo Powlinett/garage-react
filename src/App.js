@@ -1,13 +1,12 @@
 import * as React from 'react'
 import './App.css';
-import Sidebar from './components/Sidebar';
-import CarsList from './components/CarsList';
+import StateManager from './components/StateManager'
+
 
 function App() {
   return (
     <div className='d-flex'>
-      <Sidebar/>
-      <CarsList/>
+      <StateManager/>
     </div>
   );
 }

@@ -1,12 +1,37 @@
 import * as React from 'react'
+import CarsService from '../services/cars'
 
 // TODO: handle form state and submit
 
 class CarForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.postCar = this.postCar.bind(this);
+  }  
+
+  postCar(event) {
+    event.preventDefault();
+
+    const data = {};
+
+    event.currentTarget.childNodes.forEach((childNode) => {
+      if (childNode.type === 'text') {
+        const name = childNode.name;
+        const value = childNode.value;
+
+        data[name] = value;
+      }
+    });
+    
+    CarsService.postCar(data)
+      .then((data) => console.log(data));
+  }
+
   render() {
     return (
       <div className="text-center">
-        <form className="car-form">
+        <form className="car-form" onSubmit={this.postCar}>
           <input
             name="brand"
             type="text"
